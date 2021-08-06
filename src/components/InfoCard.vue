@@ -1,13 +1,15 @@
 <template>
-  <div class="card">
-    <div class="card-body">
-      <img class="mb-2 small-img" :src="account.picture" :alt="'No image found'">
-      <h4 class="card-title">
-        {{ account.name }}
-      </h4>
-      <p class="card-text">
-        {{ account.bio }}
-      </p>
+  <div class="my-1 col-md-8 d-flex align-items-start p-2 bg-light">
+    <div class="d-flex flex-column">
+      <div class="card-body">
+        <img class="mb-2 small-img" :src="account.picture" :alt="'No image found'">
+        <h4 class="">
+          {{ account.name }}
+        </h4>
+        <p class="">
+          {{ account.bio }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
