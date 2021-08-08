@@ -16,11 +16,11 @@ const routes = [
     name: 'About',
     component: loadPage('AboutPage')
   },
-  // {
-  //   path: '/profiles/ProfilePage:id',
-  //   name: 'Profile',
-  //   component: loadPage('ProfilePage')
-  // },
+  {
+    path: '/profiles/ProfilePage/:id',
+    name: 'Profile',
+    component: loadPage('ProfilePage')
+  },
   {
     path: '/account',
     name: 'Account',

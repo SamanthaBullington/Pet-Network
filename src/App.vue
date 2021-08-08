@@ -1,9 +1,9 @@
 <template>
   <main>
-    <div class="col-3 p-1">
+    <div class="col-3 m-2">
       <InfoCard />
     </div>
-    <div class="col-9 p-1">
+    <div class="col-9 m-0">
       <Navbar />
       <router-view />
     </div>

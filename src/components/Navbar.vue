@@ -56,7 +56,7 @@
               :src="user.picture"
               alt="user photo"
               height="40"
-              class="rounded"
+              class="img-icon"
             />
             <span class="mx-3">{{ user.name }}</span>
           </div>
@@ -177,5 +177,8 @@ a:hover {
 }
 .nav-item .nav-link.router-link-exact-active{
   color: #972699;
+}
+.img-icon {
+  border-radius: 50%;
 }
 </style>

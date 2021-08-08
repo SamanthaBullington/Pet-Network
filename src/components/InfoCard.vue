@@ -1,14 +1,19 @@
 <template>
-  <div class="my-1 col-md-8 d-flex align-items-start p-2 bg-light">
-    <div class="d-flex flex-column">
-      <div class="card-body">
-        <img class="mb-2 small-img" :src="account.picture" :alt="'No image found'">
-        <h4 class="">
-          {{ account.name }}
-        </h4>
-        <p class="">
-          {{ account.bio }}
-        </p>
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="mb-2 small-img info-img" :src="profile.picture" :alt="'No images found'">
+      <h4 class="card-title">
+        {{ profile.name }}
+      </h4>
+      <p class="card-text">
+        {{ profile.email }}
+        {{ profile.class }}
+        {{ profile.bio }}
+      </p>
+      <div class="w-100 d-flex justify-content-end" v-if="account.id === profile.id">
+        <button type="button" class="btn btn-danger h-25" @click.stop="edit">
+          X Edit Profile
+        </button>
       </div>
     </div>
   </div>
@@ -18,23 +23,40 @@
 import { computed } from 'vue'
 import { AppState } from '../AppState'
 import Pop from '../utils/Notifier'
+import { profileService } from '../services/ProfileService'
 import { accountService } from '../services/AccountService'
+
 export default {
-  name: 'PostCard',
+  name: 'InfoCard',
   props: {
-    post: {
+    currentProfile: {
       type: Object,
       required: true
     }
   },
   setup(props) {
     return {
+      profile: computed(() => AppState.profile),
+      async getbyId() {
+        try {
+          await profileService.getbyId(props.currentProfile.id)
+        } catch (error) {
+          Pop.toast(error, 'error')
+        }
+      },
       account: computed(() => AppState.account),
-      async destroy() {
+      async getAccount() {
+        try {
+          await accountService.getAccount()
+        } catch (error) {
+          Pop.toast(error, 'error')
+        }
+      },
+      async edit(id) {
         try {
           if (await Pop.confirm()) {
-            await accountService.destroy(props.post.id)
-            Pop.toast('Deleted!', 'Success!')
+            await accountService.edit(id)
+            Pop.toast('edited!')
           }
         } catch (error) {
           Pop.toast(error, 'error')
@@ -54,5 +76,11 @@ export default {
   max-width: 150px;
   height: 150px;
   object-fit: cover;
+}
+
+.info-img {
+  border-radius: 50%;
+  height: 150px;
+  width: 200px;
 }
 </style>
