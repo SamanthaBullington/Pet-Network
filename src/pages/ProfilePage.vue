@@ -1,6 +1,13 @@
 <template>
   <div class="profile container-fluid">
-    <PostThread :posts="posts" />
+    <div class="row">
+      <div class="col-9">
+        <PostThread :posts="posts" />
+      </div>
+      <div class="col-3">
+        Ads
+      </div>
+    </div>
   </div>
 </template>
 

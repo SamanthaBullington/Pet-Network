@@ -1,7 +1,12 @@
 <template>
   <div class="home container">
     <div class="row">
-      <PostThread :posts="posts" />
+      <div class="col-9">
+        <PostThread :posts="posts" />
+      </div>
+      <div class="col-3">
+        Ads
+      </div>
     </div>
   </div>
 </template>
