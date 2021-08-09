@@ -20,7 +20,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6">
-                <img class="w-100" :src="post.imgUrl" :alt="post.creatorId">
+                <img class="w-100" :src="profile.picture" :alt="profile.creatorId">
               </div>
               <div class="col-md-6 side-bar-scroll">
                 <p>{{ profile.name }}</p>

@@ -1,6 +1,6 @@
 <template>
-  <div class="card card-style">
-    <div class="row line w-100 align-items-center">
+  <div class="card card-style m-1">
+    <div class="row w-100 align-items-center">
       <small class="col-2 d-flex ml-3">
         <router-link :to="{ name: 'Profile', params: {id:post.creatorId}}" class="nav-link">
           <img class="mb-2 small-img" :src="post.creator.picture" :alt="'No images found'">{{ post.creator.name }}
