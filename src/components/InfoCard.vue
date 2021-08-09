@@ -10,10 +10,8 @@
         {{ profile.class }}
         {{ profile.bio }}
       </p>
-      <div class="w-100 d-flex justify-content-end" v-if="account.id === profile.id">
-        <button type="button" class="btn btn-danger h-25" @click.stop="edit">
-          X Edit Profile
-        </button>
+      <div class="action hoverable d-flex justify-content-end pr-5" v-if="account.id === profile.id" data-toggle="modal" data-target="#edit-profile" @click.stop="edit">
+        <span>X Edit Profile</span>
       </div>
     </div>
   </div>
@@ -73,5 +71,29 @@ export default {
   border-radius: 50%;
   height: 150px;
   width: 200px;
+}
+.dropdown-menu {
+  user-select: none;
+  display: block;
+  transform: scale(0);
+  transition: all 0.15s linear;
+}
+.dropdown-menu.show {
+  transform: scale(1);
+}
+.hoverable {
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+.nav-link{
+  text-transform: uppercase;
+}
+.nav-item .nav-link.router-link-exact-active{
+  color: #972699;
+}
+.img-icon {
+  border-radius: 50%;
 }
 </style>

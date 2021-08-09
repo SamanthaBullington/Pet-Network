@@ -23,16 +23,39 @@
   change posts array to results
 
 [ ]All posts render all post data (creator details, createdAt, body, like count), the mock is a good guide here but not required.
+  on PostCard add section for like amount
 
 [ ]Each page shows at least 2 ads from api collection provided
+  Make spot for ad on homepage/profile
+  Make ad component 
+      -template
+      -data
+      -style
+  make an adService that gets all ads
+  make ad selection random
 
 [x]Once logged in Users can Create Posts
 
 [x]Once logged in Users can Delete their Posts
 
 [ ]Once logged in Users can Like/unlike Posts
+  Add button to PostCard to like
+  push likeId to array on the post
+  Pass Post to postservice with edit including likeId array
+  put() the new {object} in the Api 
+  return new post with updated likeId
+  update appstate
 
-[ ]Once logged in Users can Edit their Profile
+
+[]Once logged in Users can Edit their Profile
+  [x] button that allows edit if logged in
+  [] get user info with inputs
+  [] modify existing account object with user input
+  [] send obj to services
+  [] service updates api with new object via put
+  [] return new profile object
+  [] update appstate
+
 
 [x]The UI prevents the modification/deletion of data the user did not create (disabled, hidden, etc.)
 
