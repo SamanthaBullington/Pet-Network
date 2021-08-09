@@ -16,7 +16,7 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import Pop from '../utils/Notifier'
 import { postsService } from '../services/PostsService'
-import { profileService } from '../services/ProfileService'
+// import { profileService } from '../services/ProfileService'
 
 export default {
   name: 'Home',
@@ -24,7 +24,7 @@ export default {
     onMounted(async() => {
       try {
         await postsService.getAll()
-        // await profileService.getById(id)
+        // await profileService.getById(AppState.user.id)
       } catch (error) {
         Pop.toast(error, 'error')
       }

@@ -4,6 +4,8 @@
       <small class="col-2 d-flex ml-3">
         <router-link :to="{ name: 'Profile', params: {id:post.creatorId}}" class="nav-link">
           <img class="mb-2 small-img" :src="post.creator.picture" :alt="'No images found'">{{ post.creator.name }}
+          <br />
+          Created on: {{ post.createdAt }}
         </router-link>
       </small>
       <p class=" col-6 body-wrap">

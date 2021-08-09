@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-body text-center">
+    <div class="card-body text-center" v-if="profile">
       <img class="mb-2 small-img info-img" :src="profile.picture">
       <h4 class="card-title">
         {{ profile.name }}
