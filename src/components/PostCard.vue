@@ -1,16 +1,22 @@
 <template>
-  <div class="line w-100 d-flex" v-if="post" data-toggle="modal" :data-target="'#post-modal-' + post.id ">
+  <div class="line w-100 d-flex align-items-center">
     <small class="d-flex ml-3">
       <router-link :to="{ name: 'Profile', params: {id:post.creatorId}}" class="nav-link">
-        <img class="mb-2 small-img img-icon" :src="post.creator.picture" :alt="'No images found'">
+        <img class="mb-2 small-img img-icon" :src="post.creator.picture" :alt="'No images found'">{{ post.creator.name }}
       </router-link>
-      {{ post.creator.name || 'Anonymous' }}
     </small>
-    <h5>{{ post.body }}</h5>
+    <p>
+      {{ post.body }}
+    </p>
     <div class="w-100 d-flex justify-content-end" v-if="account.id === post.creatorId">
       <button type="button" class="btn btn-danger h-25" @click.stop="destroy">
         X
       </button>
+    </div>
+    <div class="w-100 d-flex justify-content-end">
+      <span class="likes" v-if="posts">
+        {{ post.likes || 'No one likes this' }}
+      </span>
     </div>
     <!-- <PostModal :post="post" /> -->
   </div>
