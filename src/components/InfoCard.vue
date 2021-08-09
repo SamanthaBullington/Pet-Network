@@ -22,7 +22,7 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from '../AppState'
-import Pop from '../utils/Notifier'
+import { logger } from '../utils/Logger'
 import { profileService } from '../services/ProfileService'
 import { accountService } from '../services/AccountService'
 
@@ -41,7 +41,7 @@ export default {
         try {
           await profileService.getbyId(props.currentProfile.id)
         } catch (error) {
-          Pop.toast(error, 'error')
+          logger.log(error, 'error')
         }
       },
       account: computed(() => AppState.account),
@@ -49,22 +49,13 @@ export default {
         try {
           await accountService.getAccount()
         } catch (error) {
-          Pop.toast(error, 'error')
-        }
-      },
-      async edit(id) {
-        try {
-          if (await Pop.confirm()) {
-            await accountService.edit(id)
-            Pop.toast('edited!')
-          }
-        } catch (error) {
-          Pop.toast(error, 'error')
+          logger.log(error, 'error')
         }
       }
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

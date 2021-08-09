@@ -7,5 +7,3 @@ export const AppState = reactive({
   profile: {},
   posts: []
 })
-
-// add profile object for profile storage

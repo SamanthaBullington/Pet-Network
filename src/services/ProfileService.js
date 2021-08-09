@@ -14,9 +14,9 @@ class ProfileService {
     AppState.profile = res.data
   }
 
-  async edit(id) {
-    await api.put('account')
-  }
+  // async edit(id) {
+  //   await api.put('account')
+  // }
 }
 
 export const profileService = new ProfileService()

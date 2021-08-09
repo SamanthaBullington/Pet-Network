@@ -5,7 +5,7 @@
         <PostThread :posts="posts" />
       </div>
       <div class="col-3">
-        Ads
+        <!-- <Ad /> -->
       </div>
     </div>
   </div>
@@ -24,13 +24,11 @@ import { AppState } from '../AppState'
 export default {
   name: 'ProfilePage',
   setup() {
-    logger.log('this is the account' + JSON.stringify(AppState.account))
     const router = useRoute()
     onMounted(async() => {
       try {
         await postsService.getAll({ creatorId: router.params.id })
         await profileService.getById(router.params.id)
-        await accountService.getAccount(router.params.id)
       } catch (error) {
         Pop.toast(error, 'error')
       }

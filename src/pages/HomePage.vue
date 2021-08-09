@@ -5,7 +5,7 @@
         <PostThread :posts="posts" />
       </div>
       <div class="col-3">
-        Ads
+        <!-- <Ad /> -->
       </div>
     </div>
   </div>
@@ -29,6 +29,7 @@ export default {
     })
     return {
       posts: computed(() => AppState.posts)
+
     }
   }
 }
