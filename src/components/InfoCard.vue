@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-body text-center">
-      <img class="mb-2 small-img info-img" :src="profile.picture" :alt="'No images found'">
+      <img class="mb-2 small-img info-img" :src="profile.picture">
       <h4 class="card-title">
         {{ profile.name }}
       </h4>

@@ -35,7 +35,7 @@
           </router-link>
         </li>
       </ul>
-      <div class="pr-5 action hoverable" data-toggle="modal" data-target="#create-post">
+      <div class="pr-5 action hoverable" v-if="user.isAuthenticated" data-toggle="modal" data-target="#create-post">
         <span>+ New Post</span>
       </div>
       <span class="navbar-text">
