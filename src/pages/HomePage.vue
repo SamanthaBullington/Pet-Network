@@ -5,7 +5,7 @@
         <PostThread :posts="posts" />
       </div>
       <div class="col-3">
-        <!-- <Ad /> -->
+        <!-- <Ad v-for=""/> -->
       </div>
     </div>
   </div>

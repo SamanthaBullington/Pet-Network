@@ -10,9 +10,9 @@
         {{ profile.class }}
         {{ profile.bio }}
       </p>
-      <div class="action hoverable d-flex justify-content-end pr-5" v-if="account.id === profile.id" data-toggle="modal" data-target="#edit-profile" @click.stop="edit">
+      <!-- <div class="action hoverable d-flex justify-content-end pr-5" v-if="account.id === profile.id" data-toggle="modal" data-target="#edit-profile" @click.stop="edit">
         <span>X Edit Profile</span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
